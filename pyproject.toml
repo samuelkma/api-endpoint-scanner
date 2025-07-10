@@ -1,32 +1,32 @@
-[project]
-name = "api-endpoint-scanner"
-version = "0.1.0"
+[tool.poetry]
+name        = "api-endpoint-scanner"
+version     = "0.1.0"
 description = ""
-authors = [
-    {name = "samuel ma",email = "akathunder32@gmail.com"}
-]
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "aiohttp (>=3.12.13,<4.0.0)",
-    "rich (>=14.0.0,<15.0.0)",
-    "click (>=8.2.1,<9.0.0)"
+authors     = ["Samuel Ma <akathunder32@gmail.com>"]
+
+# Tell Poetry which directory should be packaged
+packages = [
+  { include = "scanner" }
 ]
 
+[tool.poetry.dependencies]
+python = "^3.11"
+aiohttp = "^3.12"
+rich   = "^14.0"
+click  = "^8.2"
+
+[tool.poetry.group.dev.dependencies]
+black            = "^25.1"
+isort            = "^6.0"
+flake8           = "^7.3"
+pytest           = "^8.4"
+pytest-asyncio   = "^1.0"
+mypy             = "^1.16"
+pre-commit       = "^4.2"
+fastapi          = "^0.111"
+uvicorn          = { version = "^0.35.0", extras = ["standard"] }
+httpx            = "^0.28"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-isort = "^6.0.1"
-flake8 = "^7.3.0"
-pytest = "^8.4.1"
-pytest-asyncio = "^1.0.0"
-mypy = "^1.16.1"
-pre-commit = "^4.2.0"
-fastapi = "^0.115.13"
-unicorn = "^2.1.3"
-httpx = "^0.28.1"
-

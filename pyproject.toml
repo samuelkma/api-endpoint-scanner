@@ -15,6 +15,8 @@ aiohttp = "^3.12"
 rich   = "^14.0"
 click  = "^8.2"
 
+
+
 [tool.poetry.group.dev.dependencies]
 black            = "^25.1"
 isort            = "^6.0"
@@ -26,6 +28,9 @@ pre-commit       = "^4.2"
 fastapi          = "^0.111"
 uvicorn          = { version = "^0.35.0", extras = ["standard"] }
 httpx            = "^0.28"
+
+[tool.flake8]
+max-line-length = 88
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

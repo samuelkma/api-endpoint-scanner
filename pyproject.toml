@@ -30,7 +30,8 @@ uvicorn          = { version = "^0.35.0", extras = ["standard"] }
 httpx            = "^0.28"
 
 [tool.flake8]
-max-line-length = 88
+max-line-length = 88      # match Black
+extend-ignore = ["E203"]  # Black’s default, safe to keep
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

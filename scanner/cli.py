@@ -24,7 +24,8 @@ def main(target: str, show_fails: bool):
         ]  # break list-comp over multiple lines
     hits = asyncio.run(run_wordlist_scan(target, words))
     for m, url, status in hits:
-        is_hit = status not in (404, -1)
+        VALID = {200, 201, 202, 204, 301, 302, 307, 308, 403}
+        is_hit = status in VALID
         if is_hit or show_fails:
             colour = (
                 "green"
